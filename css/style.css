@@ -1,0 +1,661 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,700,800&display=swap&subset=cyrillic-ext);
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:regular,700&display=swap&subset=cyrillic-ext);
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.eot?rkojzh");
+  src: url("../fonts/icons.eot?rkojzh#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?rkojzh") format("truetype"), url("../fonts/icons.woff?rkojzh") format("woff"), url("../fonts/icons.svg?rkojzh#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.select__value:after,
+[class*=_icon-]:after {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:after {
+  display: block;
+}
+
+._icon-sorted:after {
+  content: "\ea1c";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Ubunty";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Ubunty";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html {
+  font-size: 1rem;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+._select-hidden {
+  display: none;
+}
+
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 73.125rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+}
+
+.select {
+  position: relative;
+}
+
+.select__body {
+  position: relative;
+}
+
+.select__title {
+  color: inherit;
+  text-align: left;
+  border: 0.0625rem solid #d9d9d9;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.select__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.875rem;
+  padding: 0 0.9375rem;
+  gap: 0.625rem;
+  cursor: pointer;
+}
+
+.select__value > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.select__value:after {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0.625rem;
+          flex: 0 0 0.625rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: block;
+  font-size: 0.6875rem;
+  -webkit-transform: rotate(-270deg);
+      -ms-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+  content: "\ea1c";
+}
+
+.select__value._select-pseudo-label::before {
+  content: attr(data-pseudo-label);
+  opacity: 0.5;
+}
+
+.select__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.select__input {
+  width: 100%;
+  background-color: transparent;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.select__options {
+  color: #000;
+  position: absolute;
+  top: 1.8125rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  min-width: 100%;
+  left: 0;
+  background-color: #fff;
+  border-top: 0;
+  border: 0.0625rem solid #d9d9d9;
+  border-top: 0;
+  padding: 0.3125rem 0 0 0;
+}
+
+.select__scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 12.5rem;
+}
+
+.select__option {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.3125rem 0.9375rem;
+  color: inherit;
+}
+
+.select__option._select-selected {
+  background-color: #eee;
+}
+
+.select__row {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.select._select-open {
+  z-index: 5;
+}
+
+._select-tag {
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+}
+
+.checkbox:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkbox__input:focus + .checkbox__label:before {
+  -webkit-box-shadow: 0 0 0.3125rem #000;
+          box-shadow: 0 0 0.3125rem #000;
+}
+
+.checkbox__input:checked + .checkbox__label:before {
+  background: #000;
+}
+
+.checkbox__label {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  gap: 0.625rem;
+}
+
+.checkbox__label:before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1.25rem;
+          flex: 0 0 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.0625rem solid #a7a9ac;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.25rem 0.9375rem;
+  font-size: 1.125rem;
+  color: black;
+  z-index: 100;
+  position: relative;
+}
+
+.championship-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3.125rem;
+  width: 100%;
+}
+
+.championship-select__years {
+  width: 8.125rem;
+}
+
+.championship-select__names {
+  width: 15.625rem;
+}
+
+.content__table {
+  display: -ms-grid;
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  font-size: 1.125rem;
+}
+
+.content__table thead,
+.content__table tbody,
+.content__table tr {
+  display: contents;
+}
+
+.content__table th,
+.content__table td {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.content__table th::before,
+.content__table th button::before,
+.content__table td::before,
+.content__table td button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #000;
+  opacity: 0;
+  z-index: -9;
+}
+
+.content__table th {
+  position: sticky;
+  top: 0;
+  background: #6c7ae0;
+  font-weight: 700;
+  color: white;
+  z-index: 99;
+}
+
+.content__table th:last-child {
+  border: 0;
+}
+
+.content__table td {
+  padding: 0.9375rem 0.9375rem;
+  color: #808080;
+}
+
+.content__table tr:nth-child(even) td {
+  background: #f8f6ff;
+}
+
+.content__td {
+  padding: 0.3125rem;
+  text-align: center;
+}
+
+.content .td-name {
+  text-align: left;
+}
+
+.content .th {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+.content .th__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.3125rem;
+  position: relative;
+  padding: 0.9375rem 0.5rem;
+  z-index: 6;
+}
+
+.content .th__inner._increase::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.content .th__inner::after {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+  font-size: 0.75rem;
+  position: absolute;
+  left: -0.5625rem;
+}
+
+.footer {
+  padding: 1.25rem 0.9375rem;
+  font-size: 1rem;
+  color: #494949;
+}
+
+.footer__title {
+  padding: 0rem 0rem 0.9375rem 0rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.stats-description {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stats-description__item {
+  padding: 0.25rem 0rem;
+}
+
+.item-stats-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item-stats-description__abbreviation {
+  font-size: 1.125rem;
+}
+
+.item-stats-description__dash {
+  margin: 0rem 0.625rem;
+}
+
+[data-button-sort=false] {
+  cursor: text;
+}
+
+._hidden {
+  display: none !important;
+}
+
+._td-hidden {
+  display: none !important;
+}
+
+@media (max-width: 61.99875em) {
+  .championship-select {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .content__table {
+    font-size: 1rem;
+  }
+
+  .content__table td {
+    padding: 0.625rem 0.625rem;
+  }
+
+  .content .th {
+    font-size: 1.25rem;
+  }
+
+  .footer {
+    font-size: 0.875rem;
+  }
+
+  .footer__title {
+    font-size: 1.25rem;
+  }
+
+  .item-stats-description__abbreviation {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .content .th__inner {
+    padding: 0.625rem 0.3125rem;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .championship-select {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .championship-select__years {
+    width: 100%;
+  }
+
+  .championship-select__names {
+    width: 100%;
+  }
+
+  .content__table td {
+    padding: 0.625rem 0.25rem;
+  }
+}
+
+@media (any-hover: hover) {
+  .select__option:hover {
+    background: #d9d9d9;
+  }
+}
