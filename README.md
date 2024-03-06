@@ -1,2 +1,2 @@
-# crystal-statistics
-<a href='https://kulich1708.github.io/crystal-statistics/'>https://kulich1708.github.io/crystal-statistics/
+# crystall-statistics
+<a href='https://kulich1708.github.io/crystall-statistics/'>https://kulich1708.github.io/crystall-statistics/
